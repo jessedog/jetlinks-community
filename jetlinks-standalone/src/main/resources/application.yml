@@ -50,7 +50,7 @@ easyorm:
   default-schema: jetlinks # 数据库默认的schema
   dialect: mysql #数据库方言
 tdengine:
-  enabled: false
+  enabled: true
   database: jetlinks
   restful:
     endpoints:
