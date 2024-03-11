@@ -18,8 +18,8 @@ spring:
     resources:
       static-locations: file:./static/,/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/, classpath:/public/
   redis:
-    host: 127.0.0.1
-    port: 6379
+    host: 121.62.23.178
+    port: 11449
     lettuce:
       pool:
         max-active: 1024
@@ -28,10 +28,10 @@ spring:
   #        max-wait: 10s
   r2dbc:
     # 需要手动创建数据库,启动会自动创建表,修改了配置easyorm相关配置也要修改
-    url: r2dbc:postgresql://127.0.0.1:5432/jetlinks
+    url: r2dbc:mysql://121.62.23.178:11447/jetlinks?ssl=false&serverZoneId=Asia/Shanghai
     #    url: r2dbc:mysql://127.0.0.1:3306/jetlinks?ssl=false&serverZoneId=Asia/Shanghai # 修改了配置easyorm相关配置也要修改
-    username: postgres
-    password: jetlinks
+    username: root
+    password: uestc208
     pool:
       max-size: 32
       max-idle-time: 2m # 值不能大于mysql server的wait_timeout配置
@@ -41,20 +41,20 @@ spring:
     debug-agent:
       enabled: false
   elasticsearch:
-    uris: 127.0.0.1:9200
+    uris: 121.62.23.178:51446
     socket-timeout: 10s
     connection-timeout: 15s
     webclient:
       max-in-memory-size: 100MB
 easyorm:
-  default-schema: public # 数据库默认的schema
-  dialect: postgres #数据库方言
+  default-schema: jetlinks # 数据库默认的schema
+  dialect: mysql #数据库方言
 tdengine:
   enabled: false
   database: jetlinks
   restful:
     endpoints:
-      - http://127.0.0.1:6041/
+      - http://121.62.23.178:51454/
     username: root
     password: taosdata
 elasticsearch:
