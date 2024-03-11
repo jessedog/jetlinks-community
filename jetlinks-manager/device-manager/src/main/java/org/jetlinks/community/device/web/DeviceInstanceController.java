@@ -972,6 +972,14 @@ public class DeviceInstanceController implements
             });
     }
 
+    //获取设备物模型
+    @GetMapping(value = "/{id}/metadata")
+    @QueryAction
+    @Operation(summary = "获取物模型")
+    public Mono<DeviceMetadata> getMetadata(@PathVariable String id) {
+        return registry.getDevice(id).flatMap(DeviceOperator::getMetadata);
+    }
+
     //更新设备物模型
     @PutMapping(value = "/{id}/metadata")
     @SaveAction
