@@ -2,17 +2,16 @@ spring:
     resources:
         static-locations: file:./index/, file:./static/,/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/, classpath:/public/
     redis:
-        host: 121.62.23.178
-        port: 11449
+        host: 172.17.0.4
+        port: 6379
         lettuce:
             pool:
                 max-active: 1024
         timeout: 20s
     r2dbc:
-        url: r2dbc:mysql://121.62.23.178:11447/jetlinks?ssl=false&serverZoneId=Asia/Shanghai
-        #    url: r2dbc:mysql://127.0.0.1:3306/jetlinks?ssl=false&serverZoneId=Asia/Shanghai # 修改了配置easyorm相关配置也要修改
-        username: root
-        password: uestc208
+        url: r2dbc:mysql://39.108.101.26:3306/jetlinks?ssl=false&serverZoneId=Asia/Shanghai # 修改了配置easyorm相关配置也要修改
+        username: jetlinks
+        password: jetlinks_uestc
         pool:
             max-size: 32
     elasticsearch:
@@ -29,7 +28,7 @@ tdengine:
     database: jetlinks
     restful:
         endpoints:
-            - http://121.62.23.178:51454/
+            - http://120.78.131.207:6041
         username: root
         password: taosdata
 elasticsearch:

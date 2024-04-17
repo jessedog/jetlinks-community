@@ -79,7 +79,6 @@ public class SpringMessageBroker implements BeanPostProcessor {
                     }
                     return Mono.empty();
                 });
-
         });
 
         return bean;
